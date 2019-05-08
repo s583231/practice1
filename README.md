@@ -39,8 +39,6 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ## 导航栏
 
 `Navbar`
-`vue-video-player`
-`https://github.com/surmon-china/vue-video-player`
 
 ## js 分享到 qq，微信，微博
 
@@ -49,6 +47,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ## 视频组件
 
 `video`
+`vue-video-player`
+`https://github.com/surmon-china/vue-video-player`
 
 ## 音频
 
