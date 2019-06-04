@@ -69,3 +69,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ## 文件上传
 
 `upload`
+
+## 生成二维码
+
+`QRcode`

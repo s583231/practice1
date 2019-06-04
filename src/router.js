@@ -38,6 +38,13 @@ export default new Router({
       component: function () {
         return import('./components/html/index.vue')
       }
+    },
+    {
+      path: '/qrcode',
+      name: 'qrcode',
+      component: function () {
+        return import('./components/QRcode/index.vue')
+      }
     }
   ]
 })
