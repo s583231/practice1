@@ -31,6 +31,13 @@ export default new Router({
       component: function () {
         return import('./components/video/index.vue')
       }
+    },
+    {
+      path: '/html',
+      name: 'html',
+      component: function () {
+        return import('./components/html/index.vue')
+      }
     }
   ]
 })
