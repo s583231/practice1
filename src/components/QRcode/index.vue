@@ -18,13 +18,8 @@ export default {
       canvas: ''
     }
   },
-  created () {
-    this.$nextTick (function () {
-      // DOM操作
-      this.canvas = document.getElementById('qrccode-canvas')
-    })
-  },
   mounted () {
+    this.canvas = document.getElementById('qrccode-canvas')
   },
   methods: {
     showcode () {

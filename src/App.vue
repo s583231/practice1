@@ -5,6 +5,7 @@
       <router-link to="/video">video</router-link>
       <router-link to="/html">html</router-link>
       <router-link to="/qrcode">二维码</router-link>
+      <router-link to="/filters">filters</router-link>
     </div>
     <router-view/>
   </div>

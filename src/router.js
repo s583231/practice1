@@ -45,6 +45,13 @@ export default new Router({
       component: function () {
         return import('./components/QRcode/index.vue')
       }
+    },
+    {
+      path: '/filters',
+      name: 'filters',
+      component: function () {
+        return import('./components/filter/filters.vue')
+      }
     }
   ]
 })
