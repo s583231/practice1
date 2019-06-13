@@ -33,6 +33,13 @@ export default new Router({
       }
     },
     {
+      path: '/audio',
+      name: 'audio',
+      component: function () {
+        return import('./components/audio/index.vue')
+      }
+    },
+    {
       path: '/html',
       name: 'html',
       component: function () {
