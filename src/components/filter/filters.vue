@@ -29,6 +29,10 @@ export default {
       time1: 1560245812594, // 毫秒
       time2: 1560245852 // 秒
     }
+  },
+  mounted () {
+    const myDate = new Date()
+    this.time1 = myDate.getTime() // 毫秒
   }
 }
 </script>
