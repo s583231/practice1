@@ -1,16 +1,6 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/share">share</router-link><br>
-      <router-link to="/video">video</router-link><br>
-      <router-link to="/video1">video</router-link><br>
-      <router-link to="/audio">audio</router-link><br>
-      <router-link to="/html">html</router-link><br>
-      <router-link to="/qrcode">二维码</router-link><br>
-      <router-link to="/filters">filters</router-link><br>
-      <router-link to="/fileType">识别文件类型</router-link><br>
-    </div>
-    <router-view/>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -18,5 +8,18 @@
 *{
   padding: 0 ;
   margin: 0;
+}
+#app{
+  width:60%;
+  margin: 20px auto;
+}
+.right{
+  float:right;
+  width:91%;
+}
+#nav{
+  width:8%;
+  height: auto;
+  border-right: 1px solid gray;
 }
 </style>

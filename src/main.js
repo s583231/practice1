@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
+import Vuex from 'vuex'
 import router from './router'
 import ElementUI from 'element-ui'
 import * as filters from './filter/filters' // 过滤器
@@ -14,6 +15,8 @@ Object.keys(filters).forEach(key => {
 
 Vue.use(VideoPlayer)
 Vue.use(ElementUI)
+Vue.use(Vuex)
+
 
 Vue.config.productionTip = false
 

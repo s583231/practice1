@@ -5,7 +5,7 @@ import { Message } from 'element-ui'
 axios.defaults.withCredentials = true
 // 创建axios实例
 const service = axios.create({
-  baseURL: '', // api 的 base_url
+  baseURL: 'https://www.zhuoyuekecheng.com/ilife/api/', // api 的 base_url
   timeout: 30000 // 请求超时时间
 })
 
