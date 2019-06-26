@@ -5,15 +5,15 @@ import Home from './views/Home.vue'
 Vue.use(Router)
 
 let routes = [
+  // {
+  //   path: '/',
+  //   name: 'login',
+  //   component: function () {
+  //     return import('./views/login.vue')
+  //   }
+  // },
   {
     path: '/',
-    name: 'login',
-    component: function () {
-      return import('./views/login.vue')
-    }
-  },
-  {
-    path: '/home',
     name: 'home',
     component: Home,
     children: [

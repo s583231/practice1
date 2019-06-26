@@ -1,25 +1,31 @@
 <template>
   <!-- 音频 -->
-  <div class="audio">
+  <div class="audio" oncontextmenu="return false">
     <div class="audio1">
-      <audio :src="url" controls></audio>
-      <audio :src="url" id="audiobtn" @loadedmetadata="durationfun"></audio>
+      <audio :src="music" id="audiobtn" @loadedmetadata="durationfun"></audio>
       <div class="audiobox">
         <div class="img">
-          <img src="../../assets/images/audio/audio-icon.png" alt="" @click="btn">
+          <img src="../../assets/images/audio/audio-icon.png" alt="">
+          <div class="btn" v-if="isplay" @click="suspend">
+            <img src="../../assets/images/audio/暂停-icon.png">
+          </div>
+          <div class="btn" v-else @click="btn">
+            <img src="../../assets/images/audio/播放icon.png">
+          </div>
         </div>
         <div class="content">
           <div class="name">{{name}}</div>
-          <div class="time">{{duration}}</div>
-        </div>
-      </div>
-    </div>
-    <div class="buttom">
-      <div class="buttomAudio">
-        <div class="img">
-          <img src="../../assets/images/audio/audio-icon.png" alt="" @click="btn">
-        </div>
-        <div>
+          <div class="time">{{currentTime}}/{{duration}}</div>
+          <el-progress
+            class="left"
+            style="width:150px;line-height:60px;margin-top:5px"
+            :percentage="progress"
+            :show-text="false"
+            color="RGB(237,66,97)"
+          ></el-progress>
+          <div id="prebox">
+            <div class="press" @click="site"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -30,26 +36,37 @@
 export default {
   name: 'audio',
   props: {
-    url: String, // 音频链接
-    name: String // 音频名称
+    url: String,
+    name: String,
+    isplay: Boolean
   },
   data () {
     return {
+      music: 'https://m8.music.126.net/20190626181946/6d569fb2745851c5cbfef7331a14ffbf/ymusic/035a/565d/5408/4080b05718a7b23eca57cb23f5100d4e.mp3', // 音乐
       audio: null,
-      duration: null,
-      buttonaudio: false
+      duration: null, // 音频总时长
+      currentTime: null, // 已播放时长
+      // isplay: false,
+      progress: 0, // 播放进度
+      audioInterval: '' // 音频定时器
     }
   },
   mounted () {
-    this.url = 'http://www.zhuoyuekecheng.com/ilife/upload/default/20190613173138868_lm86s.mp3'
-    this.name = '曲名'
     this.audio = document.getElementById('audiobtn')
+    clearInterval(this.audioInterval)
   },
   methods: {
+    site (ev) {
+      // 150是进度条的长度
+      this.progress = ev.offsetX
+      this.audio.currentTime = (this.progress / 150) * this.audio.duration
+    },
     // loadedmetadata事件为音频/视频文件加载完数据后触发
     durationfun () {
       // duration 获取音频的时长，单位为s
+      // currentTime 已播放时长
       this.duration = this.transTime(this.audio.duration)
+      this.currentTime = this.transTime(this.audio.currentTime)
     },
     // 转换音频显示时长 将秒转换为几分几秒的格式
     transTime (time) {
@@ -69,29 +86,69 @@ export default {
     },
     // 播放/暂停按钮
     btn () {
+      this.isplay = true
       // 获取到audio元素
-      if (this.audio.paused) { // 如果当前是暂停状态
-        this.audio.play() // 播放
-      } else { // 如果当前是播放状态
-        this.audio.pause() // 暂停
-      }
+      this.audio.play() // 播放
+      this.audioInterval = setInterval(() => {
+        this.currentTime = this.transTime(this.audio.currentTime)
+        this.progress = (this.audio.currentTime / this.audio.duration) * 100
+        if (this.audio.duration === this.audio.currentTime) {
+          this.overAudio()
+        }
+      }, this.audio.duration)
+    },
+    suspend () {
+      this.isplay = false
+      this.audio.pause() // 暂停
+      clearInterval(this.audioInterval)
+    },
+    // 音频播放完的时候
+    overAudio () {
+      // this.pauseAudio();
+      clearInterval(this.audioInterval)
+      this.isplay = false
+      this.progress = 0
     }
   }
 }
 </script>
 
 <style scoped>
+#prebox{
+  position: relative;
+  bottom: 7px;
+}
+.press{
+  width:150px;
+  height:6px;
+  /* border:1px solid red; */
+  border-radius:5px;
+}
+.btn{
+  width:25px;;
+  height:25px;
+  background: rgba(0,0,0,0.4);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+}
+.btn img{
+  width:40%;
+  margin-top:25%;
+}
 .audiobox{
   width:357px;
   height: 90px;
-  border: 1px solid rgb(206,210,219)
+  border: 1px solid rgb(206,210,219);
+  margin:0 auto;
 }
-.audiobox,
-.buttomAudio{
+.audiobox {
   display:flex
 }
 .img{
   width:90px;
+  position: relative;
 }
 .content{
   padding: 20px 40px;
@@ -103,22 +160,6 @@ export default {
 .time{
   color:rgb(128,128,128);
   font-size:16px;
-  margin-top: 5px;
-}
-
-.buttom{
-  width:100%;
-  padding: 20px;
-  /* background: rgba(0,0,0,1); */
-  position: fixed;
-  bottom: 0;
-}
-.buttomAudio{
-  width:1200px;
-  height:60px;
-  margin: 0 auto;
-}
-.buttomAudio img{
-  width:60px;
+  margin-top: 10px;
 }
 </style>

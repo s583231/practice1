@@ -17,7 +17,6 @@ Vue.use(VideoPlayer)
 Vue.use(ElementUI)
 Vue.use(Vuex)
 
-
 Vue.config.productionTip = false
 
 new Vue({
