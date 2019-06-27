@@ -1,6 +1,6 @@
 <template>
   <!-- 侧边栏 -->
-  <div class=""></div>
+  <div class="sidebar"></div>
 </template>
 
 <script>
@@ -12,4 +12,9 @@ export default {
 </script>
 
 <style scoped>
+.sidebar{
+  height: 100vh;
+  min-width: 200px;
+  background: #555;
+}
 </style>

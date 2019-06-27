@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+import Home from './views/home/home.vue'
 
 Vue.use(Router)
 
@@ -10,6 +10,20 @@ let routes = [
     name: 'login',
     component: function () {
       return import('./views/login/login.vue')
+    }
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: function () {
+      return import('./views/login/register.vue')
+    }
+  },
+  {
+    path: '/forgetPassword',
+    name: 'forgetPassword',
+    component: function () {
+      return import('./views/login/forgetPassword.vue')
     }
   },
   {

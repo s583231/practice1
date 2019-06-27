@@ -5,8 +5,8 @@
       <div><input class="input" type="text" placeholder="请输入账号"></div>
       <div><input class="input" type="password" placeholder="请输入密码"></div>
       <div>
-        <div class="left pointer">注册</div>
-        <div class="right pointer">忘记密码</div>
+        <div class="left pointer" @click="toRegister">注册</div>
+        <div class="right pointer" @click="toForgetPassword">忘记密码</div>
       </div>
       <div>
         <button class="btn pointer" @click="login">登录</button>
@@ -30,6 +30,12 @@ export default {
   methods: {
     login () {
       this.$router.push({ path: '/' })
+    },
+    toRegister () {
+      this.$router.push({ path: '/register' })
+    },
+    toForgetPassword () {
+      this.$router.push({ path: '/forgetPassword' })
     }
   }
 }
