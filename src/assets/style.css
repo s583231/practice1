@@ -1,0 +1,44 @@
+* {
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+
+/* 按钮的样式 */
+.btn{
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background: rgba(0,0,170);
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+.input{
+    border:1px solid gray;
+    border-radius: 5px;
+    height: 50px;
+    width: 100%;
+    margin: 10px auto;
+    text-indent: 1em;
+}
+
+.overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+.pointer {
+    cursor: pointer;
+}

@@ -4,6 +4,7 @@ import Vuex from 'vuex'
 import router from './router'
 import ElementUI from 'element-ui'
 import * as filters from './filter/filters' // 过滤器
+import './assets/style.css'
 import 'element-ui/lib/theme-chalk/index.css'
 import VideoPlayer from 'vue-video-player' // 视频组件
 require('video.js/dist/video-js.css')

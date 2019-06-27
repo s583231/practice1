@@ -5,13 +5,13 @@ import Home from './views/Home.vue'
 Vue.use(Router)
 
 let routes = [
-  // {
-  //   path: '/',
-  //   name: 'login',
-  //   component: function () {
-  //     return import('./views/login.vue')
-  //   }
-  // },
+  {
+    path: '/login',
+    name: 'login',
+    component: function () {
+      return import('./views/login/login.vue')
+    }
+  },
   {
     path: '/',
     name: 'home',
