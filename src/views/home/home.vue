@@ -1,13 +1,15 @@
 <template>
   <div class="home">
-    <div class="left">
+    <div class="left">left</div>
+    <div class="right">right</div>
+    <!-- <div class="left">
       <sidebar></sidebar>
     </div>
-    <div class="right">
-      <!-- <Header></Header>
+    <div class="left content">
+      <Header></Header>
       <router-view></router-view>
-      <Footer></Footer> -->
-    </div>
+      <Footer></Footer>
+    </div> -->
   </div>
 </template>
 
@@ -28,9 +30,21 @@ export default {
 </script>
 
 <style scoped>
+.home{
+  min-width: 1000px;
+  height: 100vh;
+  background: gray
+}
+.left{
+  width:12%;
+  height: 100%;
+  min-width: 200px;;
+  background: gold
+}
 .right{
-    border: 1px solid red;
-    height: 100px;
-    margin-left: 200px;
+  width: 88%;
+  height: 100%;
+  min-width: 700px;
+  background: red;
 }
 </style>
