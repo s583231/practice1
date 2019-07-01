@@ -4,7 +4,8 @@
     <video src="http://www.zhuoyuekecheng.com/ilife/upload/apk/20190506160025608_lxilg.mp4" id="video"></video>
     <!-- <video :src="url" id="video" loop='true'></video> -->
     <img v-if="isshow" src="../../assets/images/audio/audio-icon.png" alt="">
-    <div class="control"></div>
+    <div class="control">
+    </div>
   </div>
 </template>
 
@@ -52,8 +53,8 @@ img{
   width:60px;
   height:60px;
   border-radius:50%;
-  top:100px;
-  right:220px;;
+  top:200px;
+  right:360px;;
 }
 .control{
   width:100%;

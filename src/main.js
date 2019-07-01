@@ -19,7 +19,6 @@ Vue.use(ElementUI)
 Vue.use(Vuex)
 
 Vue.config.productionTip = false
-
 new Vue({
   router,
   render: function (h) {
