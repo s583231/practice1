@@ -83,17 +83,16 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 2. 在router.js中进入
 ```
     import NProgress from 'nprogress'
-
     import 'nprogress/nprogress.css'
 ```
     
 3. 在router.js中配置
 ```
     NProgress.configure({     
-        easing: 'ease',  // 动画方式    
-        speed: 500,  // 递增进度条的速度    
-        showSpinner: false, // 是否显示加载ico    
-        trickleSpeed: 200, // 自动递增间隔    
+        easing: 'ease', // 动画方式
+        speed: 500, // 递增进度条的速度
+        showSpinner: false, // 是否显示加载ico
+        trickleSpeed: 200, // 自动递增间隔
         minimum: 0.3 // 初始化时的最小百分比
      })
 ```
@@ -102,7 +101,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ```
      //当路由进入前
      router.beforeEach((to, from , next) => {
-         // 每次切换页面时，调用进度条
+        // 每次切换页面时，调用进度条
         NProgress.start();
         // 这个一定要加，没有next()页面不会跳转的。这部分还不清楚的去翻一下官网就明白了
          next();
@@ -112,4 +111,17 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
         // 在即将进入新的页面组件前，关闭掉进度条
         NProgress.done()
     })
+```
+
+5. 改变导航条的样式
+```
+#nprogress .bar{
+    background: #29d;
+    position: fixed;
+    z-index: 1031;
+    top: 0;
+    left: 0;
+     width: 100%;
+    height: 2px;
+}
 ```
