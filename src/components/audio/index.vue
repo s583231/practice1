@@ -42,7 +42,7 @@ export default {
   },
   data () {
     return {
-      music: 'https://m8.music.126.net/20190626181946/6d569fb2745851c5cbfef7331a14ffbf/ymusic/035a/565d/5408/4080b05718a7b23eca57cb23f5100d4e.mp3', // 音乐
+      music: 'https://m8.music.126.net/20190702165123/ff12a9c31bba90401726f49ab005d92e/ymusic/b854/e1ff/e7c1/653c638e24580e2869184c592a370056.mp3', // 音乐
       audio: null,
       duration: null, // 音频总时长
       currentTime: null, // 已播放时长
@@ -52,6 +52,7 @@ export default {
     }
   },
   mounted () {
+    this.isplay = false
     this.audio = document.getElementById('audiobtn')
     clearInterval(this.audioInterval)
   },
@@ -60,6 +61,7 @@ export default {
       // 150是进度条的长度
       this.progress = ev.offsetX
       this.audio.currentTime = (this.progress / 150) * this.audio.duration
+      console.log(this.audio.currentTime)
     },
     // loadedmetadata事件为音频/视频文件加载完数据后触发
     durationfun () {
@@ -123,6 +125,7 @@ export default {
   height:6px;
   /* border:1px solid red; */
   border-radius:5px;
+  margin-top: 11px;
 }
 .btn{
   width:25px;;

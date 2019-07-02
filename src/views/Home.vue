@@ -27,3 +27,15 @@ export default {
   }
 }
 </script>
+<style>
+.home{
+  width:1100px;
+  margin:0 auto;
+}
+
+.home:after{
+  content:'';
+  clear: both;
+  display:block
+}
+</style>
