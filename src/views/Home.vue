@@ -27,10 +27,10 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
 .home{
-  width:1100px;
-  margin:0 auto;
+  /* width:1100px; */
+  /* margin:0 auto; */
 }
 
 .home:after{

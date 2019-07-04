@@ -1,18 +1,15 @@
 <template>
   <div class="home">
-    <div class="left">left</div>
-    <div class="right">right</div>
-    <!-- <div class="left">
+    <div class="child-one">
       <sidebar></sidebar>
     </div>
-    <div class="left content">
+    <div class="child-two">
       <Header></Header>
       <router-view></router-view>
       <Footer></Footer>
-    </div> -->
+    </div>
   </div>
 </template>
-
 <script>
 import Header from '../../components/Navbar/header'
 import Footer from '../../components/Navbar/footer'
@@ -33,18 +30,15 @@ export default {
 .home{
   min-width: 1000px;
   height: 100vh;
-  background: gray
+  display: flex;
 }
-.left{
-  width:12%;
+
+.child-one{
+  width:200px;
   height: 100%;
-  min-width: 200px;;
-  background: gold
 }
-.right{
-  width: 88%;
-  height: 100%;
-  min-width: 700px;
-  background: red;
+.child-two{
+  flex: 1;
 }
+
 </style>

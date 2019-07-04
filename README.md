@@ -125,3 +125,13 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
     height: 2px;
 }
 ```
+
+## Vue 将页面中表格数据导出excel
+
+1. 需要安装3个依赖
+```
+npm install file-saver --save   // 保存文件用
+npm install xlsx --save    // 转二进制用
+npm install script-loader --save-dev    // xlsx核心文件
+
+```
