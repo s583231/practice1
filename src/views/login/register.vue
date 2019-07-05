@@ -51,7 +51,7 @@ export default {
   overflow: hidden;
   width: 100%;
   height: 100vh;
-  background: url(../../assets/images/bg.jpg) no-repeat fixed;
+  background: url(../../assets/images/bg1.jpg) no-repeat fixed;
   background-size: 100%;
 }
 

@@ -6,7 +6,7 @@
       <audio :src="url" id="audiobtn" @loadedmetadata="durationfun"></audio>
       <div class="audiobox">
         <div class="img">
-          <img src="../../assets/images/audio/audio-icon.png" alt="" @click="btn">
+          <img :src="picaddress + 'audio/audio-icon.png'" alt="" @click="btn">
         </div>
         <div class="content">
           <div class="name">{{name}}</div>
@@ -24,15 +24,6 @@
         </div>
       </div>
     </div>
-    <!-- <div class="buttom">
-      <div class="buttomAudio">
-        <div class="img">
-          <img src="../../assets/images/audio/audio-icon.png" alt="" @click="btn">
-        </div>
-        <div>
-        </div>
-      </div>
-    </div> -->
   </div>
 </template>
 
@@ -40,8 +31,9 @@
 export default {
   name: 'audio',
   props: {
+    picaddress:'../../../assets/images/',
     url: String, // 音频链接
-    name: String // 音频名称
+    name: String // 音频名称,
   },
   data () {
     return {

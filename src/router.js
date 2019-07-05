@@ -29,6 +29,13 @@ let routes = [
     }
   },
   {
+    path: '/chart/line',
+    name: 'chartline',
+    component: function () {
+      return import('./views/charts/line.vue')
+    }
+  },
+  {
     path: '/forgetPassword',
     name: 'forgetPassword',
     component: function () {
@@ -41,93 +48,133 @@ let routes = [
     component: Home,
     children: [
       {
-        path: '/router/:id',
+        path: '/index',
+        name: 'index',
+        component: function () {
+          return import('./views/home/index.vue')
+        },
+        meta: {
+          title: '首页'
+        }
+      },
+      {
+        path: '/subgroup/router/:id',
         name: 'router',
         component: function () {
-          return import('./components/router/router.vue')
+          return import('./components/subgroup/router/router.vue')
         },
         meta: {
           title: '路由'
         }
       },
       {
-        path: '/share',
+        path: '/subgroup/share',
         name: 'share',
         component: function () {
-          return import('./components/share/index.vue')
+          return import('./components/subgroup/share/index.vue')
         },
         meta: {
           title: '分享'
         }
       },
       {
-        path: '/video',
+        path: '/subgroup/video',
         name: 'video',
         component: function () {
-          return import('./components/video/index.vue')
+          return import('./components/subgroup/video/index.vue')
         },
         meta: {
           title: '视频'
         }
       },
       {
-        path: '/video1',
+        path: '/subgroup/video1',
         name: 'video1',
         component: function () {
-          return import('./components/video/index1.vue')
+          return import('./components/subgroup/video/index1.vue')
         },
         meta: {
           title: '视频'
         }
       },
       {
-        path: '/audio',
+        path: '/subgroup/audio',
         name: 'audio',
         component: function () {
-          return import('./components/audio/index.vue')
+          return import('./components/subgroup/audio/index.vue')
         },
         meta: {
           title: '音频'
         }
       },
       {
-        path: '/html',
+        path: '/subgroup/html',
         name: 'html',
         component: function () {
-          return import('./components/html/index.vue')
+          return import('./components/subgroup/html/index.vue')
         },
         meta: {
           title: 'html'
         }
       },
       {
-        path: '/qrcode',
+        path: '/subgroup/qrcode',
         name: 'qrcode',
         component: function () {
-          return import('./components/QRcode/index.vue')
+          return import('./components/subgroup/QRcode/index.vue')
         },
         meta: {
           title: '二维码'
         }
       },
       {
-        path: '/filters',
+        path: '/subgroup/filters',
         name: 'filters',
         component: function () {
-          return import('./components/filter/filters.vue')
+          return import('./components/subgroup/filter/filters.vue')
         },
         meta: {
           title: '过滤器'
         }
       },
       {
-        path: '/fileType',
+        path: '/subgroup/fileType',
         name: 'fileType',
         component: function () {
-          return import('./components/fileType/fileType.vue')
+          return import('./components/subgroup/fileType/fileType.vue')
         },
         meta: {
           title: '识别文件类型'
+        }
+      },
+      {
+        path: '/subgroup/upload',
+        name: 'upload',
+        component: function () {
+          return import('./components/subgroup/upload/index.vue')
+        },
+        meta: {
+          title: '头像上传'
+        }
+      },
+      {
+        path: '/subgroup/backTop',
+        name: 'backTop',
+        component: function () {
+          return import('./components/subgroup/backTop/index.vue')
+        },
+        meta: {
+          title: '返回顶部按钮'
+        }
+      },
+      {
+        path: '/subgroup/dialog',
+        name: 'dialog',
+        component: function () {
+          return import('./components/subgroup/dialog/index.vue')
+        },
+        meta: {
+          title: '弹框'
         }
       }
     ]

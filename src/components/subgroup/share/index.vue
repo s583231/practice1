@@ -4,16 +4,16 @@
     <span>js实现分享到qq,微信,微博</span>
     <div class='iconh'>
       <div>
-        <img src="../../assets/images/share/qq2.png" alt="" @click='shareQQ(1,2,3)'>
+        <img :src="picaddress + 'share/qq2.png'" alt="" @click='shareQQ(1,2,3)'>
       </div>
       <div>
-        <img src="../../assets/images/share/qqzone.png" alt="" @click='shareQQZone(1,2,3)'>
+        <img :src="picaddress + 'share/qqzone.png'" alt="" @click='shareQQZone(1,2,3)'>
       </div>
       <div>
-        <img src="../../assets/images/share/wx.png" alt="" @click='shareWX()'>
+        <img :src="picaddress + 'share/wx.png'" alt="" @click='shareWX()'>
       </div>
       <div>
-        <img src="../../assets/images/share/wb1.png" alt="" @click='shareWB(1,2,3)'>
+        <img :src="picaddress + 'share/wb1.png'" alt="" @click='shareWB(1,2,3)'>
       </div>
     </div>
   </div>
@@ -23,6 +23,11 @@
 export default {
   name: '',
   props: {
+  },
+  data () {
+    return {
+      picaddress: '../../../assets/images/'
+    }
   },
   methods: {
     // QQ好友分享

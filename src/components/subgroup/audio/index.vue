@@ -5,12 +5,12 @@
       <audio :src="music" id="audiobtn" @loadedmetadata="durationfun"></audio>
       <div class="audiobox">
         <div class="img">
-          <img src="../../assets/images/audio/audio-icon.png" alt="">
+          <img :src="picaddress + 'audio/audio-icon.png'" alt="">
           <div class="btn" v-if="isplay" @click="suspend">
-            <img src="../../assets/images/audio/暂停-icon.png">
+            <img :src="picaddress + 'audio/暂停-icon.png'">
           </div>
           <div class="btn" v-else @click="btn">
-            <img src="../../assets/images/audio/播放icon.png">
+            <img :src="picaddress + 'audio/播放icon.png'">
           </div>
         </div>
         <div class="content">
@@ -42,7 +42,8 @@ export default {
   },
   data () {
     return {
-      music: 'https://m8.music.126.net/20190702165123/ff12a9c31bba90401726f49ab005d92e/ymusic/b854/e1ff/e7c1/653c638e24580e2869184c592a370056.mp3', // 音乐
+      picaddress: '../../../assets/images/',
+      music: 'https://m7.music.126.net/20190705111741/e427e0f459171ab4dd2f1321bfe2ed10/ymusic/b854/e1ff/e7c1/653c638e24580e2869184c592a370056.mp3', // 音乐
       audio: null,
       duration: null, // 音频总时长
       currentTime: null, // 已播放时长

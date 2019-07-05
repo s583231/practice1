@@ -1,6 +1,6 @@
 <template>
-  <!-- 上传图片 -->
-  <div class=""></div>
+  <!-- 弹框 -->
+  <div class="">弹框</div>
 </template>
 
 <script>

@@ -4,7 +4,7 @@
     <video :src="url" id="videobtn" @loadedmetadata="durationfun"></video>
     <!-- <video :src="url" id="video" loop='true'></video> -->
     <div class="img">
-      <img v-if="isshow" src="../../assets/images/audio/play-icon.png" alt="" @click="btnPlay">
+      <img v-if="isshow" :src="picaddress + 'audio/play-icon.png'" alt="" @click="btnPlay">
     </div>
     <div class="control">
       <div class="pro">
@@ -17,23 +17,23 @@
       </div>
       <div class="controlButton">
         <div class="play">
-          <img v-if="isshow" src="../../assets/images/audio/播放icon.png" alt="" @click="btnPlay" title="播放">
-          <img v-else src="../../assets/images/audio/暂停-icon.png" alt="" @click="btnPause" title="暂停">
+          <img v-if="isshow" :src="picaddress + 'audio/播放icon.png'" alt="" @click="btnPlay" title="播放">
+          <img v-else :src="picaddress + 'audio/暂停-icon.png'" alt="" @click="btnPause" title="暂停">
         </div>
         <div class="time">
           {{time + '/' + currentTime}}
         </div>
         <div class="voice">
-          <img src="../../assets/images/audio/音量-icon.png" alt="" title="音量">
-          <!-- <img src="../../assets/images/audio/52静音.png" alt="" title="静音"> -->
+          <img :src="picaddress + 'audio/音量-icon.png'" alt="" title="音量">
+          <!-- <img :src="picaddress + 'audio/52静音.png'" alt="" title="静音"> -->
         </div>
         <!-- <div class="speed">倍速</div> -->
         <div class="loop">
-          <img v-if="isloop" src="../../assets/images/audio/循环.png" alt="" title="循环" @click="loopfun">
-          <img v-else src="../../assets/images/audio/禁止.png" alt="" title="禁止循环" @click="loopfun">
+          <img v-if="isloop" :src="picaddress + 'audio/循环.png'" alt="" title="循环" @click="loopfun">
+          <img v-else :src="picaddress + 'audio/禁止.png'" alt="" title="禁止循环" @click="loopfun">
         </div>
         <div class="fullScreen">
-          <img src="../../assets/images/audio/全屏.png" alt="" title="全屏">
+          <img :src="picaddress + 'audio/全屏.png'" alt="" title="全屏">
         </div>
       </div>
     </div>
@@ -47,6 +47,7 @@ export default {
   },
   data () {
     return {
+      picaddress: '../../../assets/images/',
       url: 'http://www.zhuoyuekecheng.com/ilife/upload/apk/20190528151632087_8ygc7-sub.mp4',
       // url: 'http://www.zhuoyuekecheng.com/ilife/upload/apk/20190425160344613_aa70d.mp4',
       // url: 'http://www.zhuoyuekecheng.com/ilife/upload/apk/20190523165105852_s5r7i.avi', // 视频的链接
