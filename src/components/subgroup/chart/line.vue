@@ -7,7 +7,7 @@
 export default {
   name: '',
   props: {
-    datalist: Number
+    datalist: Object
   },
   mounted () {
     const myChart = this.echarts.init(document.getElementById('line'))

@@ -74,6 +74,12 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 `QRcode`
 
+## 条形码
+
+`barcode`
+
+1. 安装  `npm install vue-barcode`
+
 ## 路由跳转时，浏览器窗口上方的进度条显示
 
 1. 安装

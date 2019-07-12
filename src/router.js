@@ -43,6 +43,16 @@ let routes = [
     }
   },
   {
+    path: '/subgroup/barCrode',
+    name: 'barCrode',
+    component: function () {
+      return import('./components/subgroup/barCrode/index.vue')
+    },
+    meta: {
+      title: '条形码'
+    }
+  },
+  {
     path: '/',
     name: 'home',
     component: Home,
@@ -127,6 +137,16 @@ let routes = [
           title: '二维码'
         }
       },
+      // {
+      //   path: '/subgroup/barCrode',
+      //   name: 'barCrode',
+      //   component: function () {
+      //     return import('./components/subgroup/barCrode/index.vue')
+      //   },
+      //   meta: {
+      //     title: '条形码'
+      //   }
+      // },
       {
         path: '/subgroup/filters',
         name: 'filters',
