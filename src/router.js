@@ -43,6 +43,13 @@ let routes = [
     }
   },
   {
+    path: '/index1',
+    name: 'index1',
+    component: function () {
+      return import('./views/home/index.vue')
+    }
+  },
+  {
     path: '/subgroup/barCrode',
     name: 'barCrode',
     component: function () {

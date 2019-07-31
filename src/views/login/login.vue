@@ -42,9 +42,7 @@
             </span>
           </el-form-item>
         </el-tooltip>
-
         <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">Login</el-button>
-
         <div style="position:relative">
           <div class="tips">
             <span>Username : admin</span>
@@ -54,7 +52,6 @@
             <span style="margin-right:18px;">Username : editor</span>
             <span>Password : any</span>
           </div>
-
           <el-button class="thirdparty-button" type="primary" @click="showDialog=true">
             Or connect with
           </el-button>

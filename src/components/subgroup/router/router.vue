@@ -2,6 +2,7 @@
   <!-- 路由 -->
   <div class="router">
       当前路由 {{route}}
+      <div @click="doCopy(route)">复制</div>
   </div>
 </template>
 
